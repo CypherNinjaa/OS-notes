@@ -1,28 +1,29 @@
-import type { ReactNode } from "react"
-import { Card } from "@/components/ui/card"
-import Sidebar from "@/components/sidebar"
+"use client"
+
+import type React from "react"
+
+import { useState, useEffect } from "react"
+import ModuleSidebar from "./module-sidebar"
 
 interface ModuleLayoutProps {
-  children: ReactNode
-  title: string
-  description: string
   moduleNumber: number
+  children: React.ReactNode
 }
 
-export default function ModuleLayout({ children, title, description, moduleNumber }: ModuleLayoutProps) {
+export default function ModuleLayout({ moduleNumber, children }: ModuleLayoutProps) {
+  // Add a client-side flag to prevent SSR issues
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   return (
-    <div className="container mx-auto px-4 py-6 md:py-10">
-      <div className="flex flex-col md:flex-row gap-6">
-        <Sidebar />
-        <div className="flex-1 md:ml-64">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold tracking-tight mb-2">{title}</h1>
-            <p className="text-xl text-muted-foreground">{description}</p>
-          </div>
-          <Card className="p-6">
-            <div className="prose dark:prose-invert max-w-none">{children}</div>
-          </Card>
-        </div>
+    <div className="container mx-auto px-4 py-8">
+      <div className="flex flex-col md:flex-row gap-8">
+        {/* Only render the sidebar on the client side */}
+        {isClient && <ModuleSidebar moduleNumber={moduleNumber} />}
+        <div className="flex-1">{children}</div>
       </div>
     </div>
   )
