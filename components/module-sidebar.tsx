@@ -95,10 +95,11 @@ interface ModuleSidebarProps {
 
 export default function ModuleSidebar({ moduleNumber }: ModuleSidebarProps) {
   const [activeHash, setActiveHash] = useState("")
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    // Only run on the client side
-    if (typeof window === "undefined") return
+    // Mark that we're on the client
+    setIsClient(true)
 
     const handleHashChange = () => {
       setActiveHash(window.location.hash)
@@ -124,7 +125,8 @@ export default function ModuleSidebar({ moduleNumber }: ModuleSidebarProps) {
           <ScrollArea className="h-[calc(100vh-12rem)]">
             <div className="space-y-1">
               {topics.map((topic, index) => {
-                const isActive = topic.href.includes(activeHash)
+                // Only check for active state on the client
+                const isActive = isClient && activeHash && topic.href.includes(activeHash)
                 return (
                   <Button
                     key={index}
