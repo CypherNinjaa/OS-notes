@@ -1,30 +1,29 @@
-# Help with study
+# OS Notes
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Welcome to **OS Notes** – your go-to resource for concise and organized Operating Systems study notes. This website is designed to help students and enthusiasts quickly find, review, and understand key OS concepts, making exam preparation and learning more efficient.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/vikashs-projects-b0e8ebf0/v0-help-with-study)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/zRU1gXvybaj)
+## Features
 
-## Overview
+- Well-structured notes on core Operating Systems topics
+- Easy navigation and search
+- Regularly updated content
+- Accessible on any device
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## About the Developer
 
-## Deployment
+Developed by [Your Name], a passionate learner and developer dedicated to making technical education accessible and effective for everyone. Connect with me on [LinkedIn](#) or check out my other projects!
 
-Your project is live at:
+## Live Website
 
-**[https://vercel.com/vikashs-projects-b0e8ebf0/v0-help-with-study](https://vercel.com/vikashs-projects-b0e8ebf0/v0-help-with-study)**
+Visit the site: [https://os-notes.vercel.app/](https://os-notes.vercel.app/)
 
-## Build your app
+## Contributing
 
-Continue building your app on:
+Contributions, suggestions, and feedback are welcome! Please open an issue or submit a pull request.
 
-**[https://v0.dev/chat/projects/zRU1gXvybaj](https://v0.dev/chat/projects/zRU1gXvybaj)**
+## License
 
-## How It Works
+This project is open source and available under the [MIT License](LICENSE).
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+---
+*Happy studying!*
