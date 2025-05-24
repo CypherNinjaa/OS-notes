@@ -114,12 +114,75 @@ export default function Home() {
               <CardContent>
                 <p className="text-muted-foreground">{module.description}</p>
               </CardContent>
-              <CardFooter className="pt-3">
+              <CardFooter className="flex flex-col gap-2 pt-3">
                 <Button asChild variant="outline" className="w-full">
                   <Link href={`/modules/${module.number}`}>
                     <Code className="mr-2 h-4 w-4" /> Study Module
                   </Link>
                 </Button>
+                {/* Interactive Demo Button (if available) */}
+                {(() => {
+                  if (module.number === 3) {
+                    return (
+                      <Button asChild variant="default" className="w-full">
+                        <Link href="/modules/3/page-with-demos">
+                          <Code className="mr-2 h-4 w-4" /> Interactive Demos
+                        </Link>
+                      </Button>
+                    )
+                  }
+                  if (module.number === 4) {
+                    return (
+                      <Button asChild variant="default" className="w-full">
+                        <Link href="/modules/4/page-with-demos">
+                          <Code className="mr-2 h-4 w-4" /> Interactive Demos
+                        </Link>
+                      </Button>
+                    )
+                  }
+                  if (module.number === 1) {
+                    return (
+                      <Button asChild variant="default" className="w-full">
+                        <Link href="/modules/1/page-with-demos">
+                          <Code className="mr-2 h-4 w-4" /> Interactive Demos
+                        </Link>
+                      </Button>
+                    )
+                  }
+                  if (module.number === 2) {
+                    return (
+                      <Button asChild variant="default" className="w-full">
+                        <Link href="/modules/2/page-with-demos">
+                          <Code className="mr-2 h-4 w-4" /> Interactive Demos
+                        </Link>
+                      </Button>
+                    )
+                  }
+                  if (module.number === 5) {
+                    return (
+                      <Button asChild variant="default" className="w-full">
+                        <Link href="/modules/5/page-with-demos">
+                          <Code className="mr-2 h-4 w-4" /> Interactive Demos
+                        </Link>
+                      </Button>
+                    )
+                  }
+                  if (module.number === 6) {
+                    return (
+                      <Button asChild variant="default" className="w-full">
+                        <Link href="/modules/6/page-with-demos">
+                          <Code className="mr-2 h-4 w-4" /> Interactive Demos
+                        </Link>
+                      </Button>
+                    )
+                  }
+                  // Fallback (should not be reached)
+                  return (
+                    <Button disabled variant="ghost" className="w-full opacity-60 cursor-not-allowed">
+                      <Code className="mr-2 h-4 w-4" /> No Interactive Demo
+                    </Button>
+                  )
+                })()}
               </CardFooter>
             </Card>
           ))}
