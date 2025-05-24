@@ -134,24 +134,24 @@ export default function Module2() {
   ]
 
   return (
-    <ModuleLayout 
-      title="Module 2: Process Management" 
+    <ModuleLayout
+      title="Module 2: Process Management"
       description="Process concepts, states, synchronization, and communication"
       moduleNumber={2}
     >
       <section id="process-concept">
         <h2>Process Concept</h2>
         <p>
-          A process is an instance of a program in execution. It is the basic unit of work in an operating system.
-          Each process has its own memory space, system resources, and execution context.
+          A process is an instance of a program in execution. It is the basic unit of work in an operating system. Each
+          process has its own memory space, system resources, and execution context.
         </p>
-        
+
         <div className="my-6">
-          <Image 
-            src="/placeholder.svg?height=400&width=800&query=process in memory showing text, data, heap, and stack segments" 
-            alt="Process in Memory" 
-            width={800} 
-            height={400} 
+          <Image
+            src="/placeholder.svg?height=400&width=800&query=process in memory showing text, data, heap, and stack segments"
+            alt="Process in Memory"
+            width={800}
+            height={400}
             className="rounded-md"
           />
           <p className="text-sm text-center text-muted-foreground mt-2">
@@ -159,18 +159,26 @@ export default function Module2() {
           </p>
         </div>
 
-        <p>
-          A process consists of the following components:
-        </p>
+        <p>A process consists of the following components:</p>
         <ul className="list-disc pl-5 mt-2">
-          <li><strong>Program Code (Text):</strong> The executable instructions of the program.</li>
-          <li><strong>Data:</strong> Global and static variables used by the program.</li>
-          <li><strong>Heap:</strong> Dynamically allocated memory during program execution.</li>
-          <li><strong>Stack:</strong> Temporary data storage for function parameters, return addresses, and local variables.</li>
+          <li>
+            <strong>Program Code (Text):</strong> The executable instructions of the program.
+          </li>
+          <li>
+            <strong>Data:</strong> Global and static variables used by the program.
+          </li>
+          <li>
+            <strong>Heap:</strong> Dynamically allocated memory during program execution.
+          </li>
+          <li>
+            <strong>Stack:</strong> Temporary data storage for function parameters, return addresses, and local
+            variables.
+          </li>
         </ul>
 
         <p className="mt-4">
-          The operating system maintains a data structure called the Process Control Block (PCB) for each process. The PCB contains:
+          The operating system maintains a data structure called the Process Control Block (PCB) for each process. The
+          PCB contains:
         </p>
         <ul className="list-disc pl-5 mt-2">
           <li>Process ID (PID)</li>
@@ -186,9 +194,7 @@ export default function Module2() {
 
       <section id="process-states" className="mt-8">
         <h2>Process States</h2>
-        <p>
-          During its lifetime, a process goes through various states as it executes:
-        </p>
+        <p>During its lifetime, a process goes through various states as it executes:</p>
 
         <Card className="my-4">
           <CardContent className="p-6">
@@ -203,7 +209,8 @@ export default function Module2() {
                 <strong className="text-primary">Running:</strong> Instructions are being executed.
               </li>
               <li>
-                <strong className="text-primary">Waiting:</strong> The process is waiting for some event to occur (such as an I/O completion).
+                <strong className="text-primary">Waiting:</strong> The process is waiting for some event to occur (such
+                as an I/O completion).
               </li>
               <li>
                 <strong className="text-primary">Terminated:</strong> The process has finished execution.
@@ -213,36 +220,44 @@ export default function Module2() {
         </Card>
 
         <div className="my-6">
-          <Image 
-            src="/placeholder.svg?height=400&width=800&query=process state transition diagram showing new, ready, running, waiting, and terminated states" 
-            alt="Process State Transitions" 
-            width={800} 
-            height={400} 
+          <Image
+            src="/placeholder.svg?height=400&width=800&query=process state transition diagram showing new, ready, running, waiting, and terminated states"
+            alt="Process State Transitions"
+            width={800}
+            height={400}
             className="rounded-md"
           />
-          <p className="text-sm text-center text-muted-foreground mt-2">
-            Figure 2: Process state transition diagram
-          </p>
+          <p className="text-sm text-center text-muted-foreground mt-2">Figure 2: Process state transition diagram</p>
         </div>
 
-        <p className="mt-4">
-          Process state transitions occur in response to specific events:
-        </p>
+        <p className="mt-4">Process state transitions occur in response to specific events:</p>
         <ul className="list-disc pl-5 mt-2">
-          <li><strong>New → Ready:</strong> When the process is admitted to the ready queue.</li>
-          <li><strong>Ready → Running:</strong> When the scheduler selects the process for execution.</li>
-          <li><strong>Running → Ready:</strong> When the scheduler preempts the process (e.g., time quantum expires).</li>
-          <li><strong>Running → Waiting:</strong> When the process requests I/O or waits for an event.</li>
-          <li><strong>Waiting → Ready:</strong> When the I/O completes or the event occurs.</li>
-          <li><strong>Running → Terminated:</strong> When the process completes execution or is aborted.</li>
+          <li>
+            <strong>New → Ready:</strong> When the process is admitted to the ready queue.
+          </li>
+          <li>
+            <strong>Ready → Running:</strong> When the scheduler selects the process for execution.
+          </li>
+          <li>
+            <strong>Running → Ready:</strong> When the scheduler preempts the process (e.g., time quantum expires).
+          </li>
+          <li>
+            <strong>Running → Waiting:</strong> When the process requests I/O or waits for an event.
+          </li>
+          <li>
+            <strong>Waiting → Ready:</strong> When the I/O completes or the event occurs.
+          </li>
+          <li>
+            <strong>Running → Terminated:</strong> When the process completes execution or is aborted.
+          </li>
         </ul>
       </section>
 
       <section id="synchronization" className="mt-8">
         <h2>Process Synchronization</h2>
         <p>
-          Process synchronization is the coordination of multiple processes to complete a task with correct runtime order and no race conditions.
-          It is necessary when processes share data or resources.
+          Process synchronization is the coordination of multiple processes to complete a task with correct runtime
+          order and no race conditions. It is necessary when processes share data or resources.
         </p>
 
         <p className="mt-4">
@@ -251,22 +266,25 @@ export default function Module2() {
         </p>
 
         <p className="mt-4">
-          A race condition occurs when multiple processes access and manipulate shared data concurrently, and the outcome depends on the particular order in which the access takes place. To prevent race conditions, we need to ensure that only one process can access the shared data at a time.
+          A race condition occurs when multiple processes access and manipulate shared data concurrently, and the
+          outcome depends on the particular order in which the access takes place. To prevent race conditions, we need
+          to ensure that only one process can access the shared data at a time.
         </p>
       </section>
 
       <section id="critical-section" className="mt-8">
         <h2>Critical Section</h2>
         <p>
-          A critical section is a segment of code where processes access shared resources and which must not be executed by more than one process at a time.
+          A critical section is a segment of code where processes access shared resources and which must not be executed
+          by more than one process at a time.
         </p>
 
         <div className="my-6">
-          <Image 
-            src="/placeholder.svg?height=300&width=800&query=critical section problem showing entry section, critical section, and exit section" 
-            alt="Critical Section Problem" 
-            width={800} 
-            height={300} 
+          <Image
+            src="/placeholder.svg?height=300&width=800&query=critical section problem showing entry section, critical section, and exit section"
+            alt="Critical Section Problem"
+            width={800}
+            height={300}
             className="rounded-md"
           />
           <p className="text-sm text-center text-muted-foreground mt-2">
@@ -274,21 +292,29 @@ export default function Module2() {
           </p>
         </div>
 
-        <p>
-          Any solution to the critical section problem must satisfy the following three conditions:
-        </p>
+        <p>Any solution to the critical section problem must satisfy the following three conditions:</p>
         <ul className="list-disc pl-5 mt-2">
-          <li><strong>Mutual Exclusion:</strong> Only one process can execute in the critical section at a time.</li>
-          <li><strong>Progress:</strong> If no process is executing in the critical section and some processes wish to enter it, only those processes not in their remainder section can participate in the decision, and the decision cannot be postponed indefinitely.</li>
-          <li><strong>Bounded Waiting:</strong> There exists a bound on the number of times other processes can enter their critical sections after a process has made a request to enter its critical section and before that request is granted.</li>
+          <li>
+            <strong>Mutual Exclusion:</strong> Only one process can execute in the critical section at a time.
+          </li>
+          <li>
+            <strong>Progress:</strong> If no process is executing in the critical section and some processes wish to
+            enter it, only those processes not in their remainder section can participate in the decision, and the
+            decision cannot be postponed indefinitely.
+          </li>
+          <li>
+            <strong>Bounded Waiting:</strong> There exists a bound on the number of times other processes can enter
+            their critical sections after a process has made a request to enter its critical section and before that
+            request is granted.
+          </li>
         </ul>
       </section>
 
       <section id="mutual-exclusion" className="mt-8">
         <h2>Mutual Exclusion</h2>
         <p>
-          Mutual exclusion is a property of concurrency control, which is instituted to prevent race conditions.
-          It ensures that only one process can access a shared resource at a time.
+          Mutual exclusion is a property of concurrency control, which is instituted to prevent race conditions. It
+          ensures that only one process can access a shared resource at a time.
         </p>
 
         <Tabs defaultValue="software" className="my-6">
@@ -299,13 +325,19 @@ export default function Module2() {
           </TabsList>
           <TabsContent value="software" className="p-4 border rounded-md mt-2">
             <h3 className="text-lg font-medium mb-2">Software Solutions</h3>
-            <p className="mb-2">
-              Software-based solutions for mutual exclusion include algorithms like:
-            </p>
+            <p className="mb-2">Software-based solutions for mutual exclusion include algorithms like:</p>
             <ul className="list-disc pl-5 mt-2">
-              <li><strong>Peterson's Algorithm:</strong> A two-process solution that uses shared variables.</li>
-              <li><strong>Dekker's Algorithm:</strong> The first correct software solution to the mutual exclusion problem.</li>
-              <li><strong>Lamport's Bakery Algorithm:</strong> A solution for n processes, similar to taking a number at a bakery.</li>
+              <li>
+                <strong>Peterson's Algorithm:</strong> A two-process solution that uses shared variables.
+              </li>
+              <li>
+                <strong>Dekker's Algorithm:</strong> The first correct software solution to the mutual exclusion
+                problem.
+              </li>
+              <li>
+                <strong>Lamport's Bakery Algorithm:</strong> A solution for n processes, similar to taking a number at a
+                bakery.
+              </li>
             </ul>
             <p className="mt-4">
               These solutions don't require special hardware support but may not be efficient for many processes.
@@ -313,39 +345,49 @@ export default function Module2() {
           </TabsContent>
           <TabsContent value="hardware" className="p-4 border rounded-md mt-2">
             <h3 className="text-lg font-medium mb-2">Hardware Support</h3>
-            <p className="mb-2">
-              Hardware-based solutions use atomic instructions provided by the CPU:
-            </p>
+            <p className="mb-2">Hardware-based solutions use atomic instructions provided by the CPU:</p>
             <ul className="list-disc pl-5 mt-2">
-              <li><strong>Test and Set:</strong> An atomic instruction that tests and sets a memory location.</li>
-              <li><strong>Compare and Swap:</strong> Atomically compares the contents of a memory location to a given value and modifies it if they are the same.</li>
-              <li><strong>Atomic Variables:</strong> Variables that provide atomic operations for common tasks.</li>
+              <li>
+                <strong>Test and Set:</strong> An atomic instruction that tests and sets a memory location.
+              </li>
+              <li>
+                <strong>Compare and Swap:</strong> Atomically compares the contents of a memory location to a given
+                value and modifies it if they are the same.
+              </li>
+              <li>
+                <strong>Atomic Variables:</strong> Variables that provide atomic operations for common tasks.
+              </li>
             </ul>
-            <p className="mt-4">
-              These solutions are more efficient but require specific hardware support.
-            </p>
+            <p className="mt-4">These solutions are more efficient but require specific hardware support.</p>
           </TabsContent>
           <TabsContent value="semaphores" className="p-4 border rounded-md mt-2">
             <h3 className="text-lg font-medium mb-2">Semaphores</h3>
-            <p className="mb-2">
-              Semaphores are a synchronization mechanism introduced by Dijkstra:
-            </p>
+            <p className="mb-2">Semaphores are a synchronization mechanism introduced by Dijkstra:</p>
             <ul className="list-disc pl-5 mt-2">
-              <li><strong>Binary Semaphore:</strong> Can have only the values 0 and 1, used for mutual exclusion.</li>
-              <li><strong>Counting Semaphore:</strong> Can have arbitrary non-negative values, used for resource counting.</li>
+              <li>
+                <strong>Binary Semaphore:</strong> Can have only the values 0 and 1, used for mutual exclusion.
+              </li>
+              <li>
+                <strong>Counting Semaphore:</strong> Can have arbitrary non-negative values, used for resource counting.
+              </li>
             </ul>
             <p className="mt-4">
               Semaphores provide a higher-level abstraction for mutual exclusion and synchronization.
             </p>
             <div className="bg-muted p-4 rounded-md mt-4">
               <p className="font-mono text-sm">
-                // Binary semaphore example<br />
-                const mutex = 1; // Initialize to 1<br /><br />
-
-                // Process P1<br />
-                wait(mutex); // Acquire the semaphore<br />
-                // Critical section<br />
-                signal(mutex); // Release the semaphore<br />
+                // Binary semaphore example
+                <br />
+                const mutex = 1; // Initialize to 1<br />
+                <br />
+                // Process P1
+                <br />
+                wait(mutex); // Acquire the semaphore
+                <br />
+                // Critical section
+                <br />
+                signal(mutex); // Release the semaphore
+                <br />
               </p>
             </div>
           </TabsContent>
@@ -354,9 +396,7 @@ export default function Module2() {
 
       <section id="classical-problems" className="mt-8">
         <h2>Classical Synchronization Problems</h2>
-        <p>
-          Several classical problems illustrate the challenges of process synchronization:
-        </p>
+        <p>Several classical problems illustrate the challenges of process synchronization:</p>
 
         <Tabs defaultValue="producer-consumer" className="my-6">
           <TabsList className="grid grid-cols-1 md:grid-cols-3">
@@ -366,67 +406,96 @@ export default function Module2() {
           </TabsList>
           <TabsContent value="producer-consumer" className="p-4 border rounded-md mt-2">
             <h3 className="text-lg font-medium mb-2">Producer-Consumer Problem</h3>
-            <p className="mb-2">
-              Also known as the bounded-buffer problem, it involves two types of processes:
-            </p>
+            <p className="mb-2">Also known as the bounded-buffer problem, it involves two types of processes:</p>
             <ul className="list-disc pl-5 mt-2">
-              <li><strong>Producers:</strong> Generate data and place it in a buffer.</li>
-              <li><strong>Consumers:</strong> Take data from the buffer and process it.</li>
+              <li>
+                <strong>Producers:</strong> Generate data and place it in a buffer.
+              </li>
+              <li>
+                <strong>Consumers:</strong> Take data from the buffer and process it.
+              </li>
             </ul>
             <p className="mt-4">
-              The challenge is to ensure that producers don't add data to a full buffer and consumers don't remove data from an empty buffer.
+              The challenge is to ensure that producers don't add data to a full buffer and consumers don't remove data
+              from an empty buffer.
             </p>
             <div className="my-4">
-              <Image 
-                src="/placeholder.svg?height=300&width=600&query=producer consumer problem with buffer" 
-                alt="Producer-Consumer Problem" 
-                width={600} 
-                height={300} 
+              <Image
+                src="/placeholder.svg?height=300&width=600&query=producer consumer problem with buffer"
+                alt="Producer-Consumer Problem"
+                width={600}
+                height={300}
                 className="rounded-md mx-auto"
               />
             </div>
             <div className="bg-muted p-4 rounded-md mt-4">
               <p className="font-mono text-sm">
-                // Semaphore solution<br />
-                const mutex = 1; // Binary semaphore for mutual exclusion<br />
-                const empty = n; // Counting semaphore for empty slots (n = buffer size)<br />
-                const full = 0; // Counting semaphore for filled slots<br /><br />
-
-                // Producer<br />
-                wait(empty); // Wait if buffer is full<br />
-                wait(mutex); // Enter critical section<br />
-                // Add item to buffer<br />
-                signal(mutex); // Exit critical section<br />
-                signal(full); // Signal that a slot is filled<br /><br />
-
-                // Consumer<br />
-                wait(full); // Wait if buffer is empty<br />
-                wait(mutex); // Enter critical section<br />
-                // Remove item from buffer<br />
-                signal(mutex); // Exit critical section<br />
-                signal(empty); // Signal that a slot is emptied<br />
+                // Semaphore solution
+                <br />
+                const mutex = 1; // Binary semaphore for mutual exclusion
+                <br />
+                const empty = n; // Counting semaphore for empty slots (n = buffer size)
+                <br />
+                const full = 0; // Counting semaphore for filled slots
+                <br />
+                <br />
+                // Producer
+                <br />
+                wait(empty); // Wait if buffer is full
+                <br />
+                wait(mutex); // Enter critical section
+                <br />
+                // Add item to buffer
+                <br />
+                signal(mutex); // Exit critical section
+                <br />
+                signal(full); // Signal that a slot is filled
+                <br />
+                <br />
+                // Consumer
+                <br />
+                wait(full); // Wait if buffer is empty
+                <br />
+                wait(mutex); // Enter critical section
+                <br />
+                // Remove item from buffer
+                <br />
+                signal(mutex); // Exit critical section
+                <br />
+                signal(empty); // Signal that a slot is emptied
+                <br />
               </p>
             </div>
           </TabsContent>
           <TabsContent value="readers-writers" className="p-4 border rounded-md mt-2">
             <h3 className="text-lg font-medium mb-2">Readers-Writers Problem</h3>
-            <p className="mb-2">
-              This problem involves processes that can be divided into two categories:
-            </p>
+            <p className="mb-2">This problem involves processes that can be divided into two categories:</p>
             <ul className="list-disc pl-5 mt-2">
-              <li><strong>Readers:</strong> Only read the shared data and don't modify it.</li>
-              <li><strong>Writers:</strong> Can both read and modify the shared data.</li>
+              <li>
+                <strong>Readers:</strong> Only read the shared data and don't modify it.
+              </li>
+              <li>
+                <strong>Writers:</strong> Can both read and modify the shared data.
+              </li>
             </ul>
             <p className="mt-4">
-              The challenge is to allow multiple readers to access the data simultaneously while ensuring that writers have exclusive access.
+              The challenge is to allow multiple readers to access the data simultaneously while ensuring that writers
+              have exclusive access.
             </p>
-            <p className="mt-2">
-              There are different variations of this problem with different priorities:
-            </p>
+            <p className="mt-2">There are different variations of this problem with different priorities:</p>
             <ul className="list-disc pl-5 mt-2">
-              <li><strong>First Readers-Writers Problem:</strong> No reader should wait unless a writer has already obtained permission to use the shared object.</li>
-              <li><strong>Second Readers-Writers Problem:</strong> Once a writer is ready, no new readers should be allowed to start reading.</li>
-              <li><strong>Third Readers-Writers Problem:</strong> No thread should be allowed to starve (wait indefinitely).</li>
+              <li>
+                <strong>First Readers-Writers Problem:</strong> No reader should wait unless a writer has already
+                obtained permission to use the shared object.
+              </li>
+              <li>
+                <strong>Second Readers-Writers Problem:</strong> Once a writer is ready, no new readers should be
+                allowed to start reading.
+              </li>
+              <li>
+                <strong>Third Readers-Writers Problem:</strong> No thread should be allowed to starve (wait
+                indefinitely).
+              </li>
             </ul>
           </TabsContent>
           <TabsContent value="dining-philosophers" className="p-4 border rounded-md mt-2">
@@ -440,37 +509,37 @@ export default function Module2() {
               <li>Philosophers alternate between thinking and eating.</li>
             </ul>
             <p className="mt-4">
-              The challenge is to design a protocol that allows philosophers to eat without causing deadlock or starvation.
+              The challenge is to design a protocol that allows philosophers to eat without causing deadlock or
+              starvation.
             </p>
             <div className="my-4">
-              <Image 
-                src="/placeholder.svg?height=300&width=300&query=dining philosophers problem with 5 philosophers at a round table" 
-                alt="Dining Philosophers Problem" 
-                width={300} 
-                height={300} 
+              <Image
+                src="/placeholder.svg?height=300&width=300&query=dining philosophers problem with 5 philosophers at a round table"
+                alt="Dining Philosophers Problem"
+                width={300}
+                height={300}
                 className="rounded-md mx-auto"
               />
             </div>
-            <p className="mt-4">
-              One solution is to introduce an asymmetry in the way philosophers pick up forks:
-            </p>
+            <p className="mt-4">One solution is to introduce an asymmetry in the way philosophers pick up forks:</p>
             <div className="bg-muted p-4 rounded-md mt-4">
-              <p className="font-mono text-sm">
-                // Asymmetric solution<br />
-                // Philosophers 0, 2, 4 pick up left fork first<br />
-                // Philosophers 1, 3 pick up right fork first<br /><br />
-                // Philosopher i<br />
-                if (i % 2 == 0) {<br />\
-                &nbsp;&nbsp;wait(fork[i]); // Pick up left fork<br />
-                &nbsp;&nbsp;wait(fork[(i+1) % 5]); // Pick up right fork<br />
-                } else {<br />
-                &nbsp;&nbsp;wait(fork[(i+1) % 5]); // Pick up right fork<br />
-                &nbsp;&nbsp;wait(fork[i]); // Pick up left fork<br />
-                }<br />
-                // Eat<br />
-                signal(fork[i]); // Put down left fork<br />
-                signal(fork[(i+1) % 5]); // Put down right fork<br />
-              </p>
+              <pre className="font-mono text-sm whitespace-pre-wrap">
+                {`// Asymmetric solution
+// Philosophers 0, 2, 4 pick up left fork first
+// Philosophers 1, 3 pick up right fork first
+
+// Philosopher i
+if (i % 2 == 0) {
+  wait(fork[i]); // Pick up left fork
+  wait(fork[(i+1) % 5]); // Pick up right fork
+} else {
+  wait(fork[(i+1) % 5]); // Pick up right fork
+  wait(fork[i]); // Pick up left fork
+}
+// Eat
+signal(fork[i]); // Put down left fork
+signal(fork[(i+1) % 5]); // Put down right fork`}
+              </pre>
             </div>
           </TabsContent>
         </Tabs>
@@ -479,40 +548,48 @@ export default function Module2() {
       <section id="scheduling" className="mt-8">
         <h2>Process Scheduling</h2>
         <p>
-          Process scheduling is the activity of the process manager that handles the removal of the running process from the CPU and the selection of another process based on a particular strategy.
+          Process scheduling is the activity of the process manager that handles the removal of the running process from
+          the CPU and the selection of another process based on a particular strategy.
         </p>
 
         <p className="mt-4">
-          The objective of process scheduling is to keep the CPU busy at all times and to deliver acceptable response times for all programs.
+          The objective of process scheduling is to keep the CPU busy at all times and to deliver acceptable response
+          times for all programs.
         </p>
 
         <div className="my-6">
-          <Image 
-            src="/placeholder.svg?height=300&width=800&query=process scheduling queue with ready queue, CPU, and I/O queue" 
-            alt="Process Scheduling Queues" 
-            width={800} 
-            height={300} 
+          <Image
+            src="/placeholder.svg?height=300&width=800&query=process scheduling queue with ready queue, CPU, and I/O queue"
+            alt="Process Scheduling Queues"
+            width={800}
+            height={300}
             className="rounded-md"
           />
-          <p className="text-sm text-center text-muted-foreground mt-2">
-            Figure 4: Process scheduling queues
-          </p>
+          <p className="text-sm text-center text-muted-foreground mt-2">Figure 4: Process scheduling queues</p>
         </div>
 
-        <p className="mt-4">
-          There are different types of schedulers in an operating system:
-        </p>
+        <p className="mt-4">There are different types of schedulers in an operating system:</p>
         <ul className="list-disc pl-5 mt-2">
-          <li><strong>Long-term Scheduler (Job Scheduler):</strong> Controls the degree of multiprogramming by selecting which processes should be loaded into memory for execution.</li>
-          <li><strong>Medium-term Scheduler:</strong> Handles swapping processes in and out of memory to improve the process mix.</li>
-          <li><strong>Short-term Scheduler (CPU Scheduler):</strong> Selects which process should be executed next and allocates the CPU to it.</li>
+          <li>
+            <strong>Long-term Scheduler (Job Scheduler):</strong> Controls the degree of multiprogramming by selecting
+            which processes should be loaded into memory for execution.
+          </li>
+          <li>
+            <strong>Medium-term Scheduler:</strong> Handles swapping processes in and out of memory to improve the
+            process mix.
+          </li>
+          <li>
+            <strong>Short-term Scheduler (CPU Scheduler):</strong> Selects which process should be executed next and
+            allocates the CPU to it.
+          </li>
         </ul>
       </section>
 
       <section id="ipc" className="mt-8">
         <h2>Interprocess Communication (IPC)</h2>
         <p>
-          Interprocess Communication (IPC) is a mechanism that allows processes to communicate with each other and synchronize their actions.
+          Interprocess Communication (IPC) is a mechanism that allows processes to communicate with each other and
+          synchronize their actions.
         </p>
 
         <Tabs defaultValue="shared-memory" className="my-6">
@@ -533,20 +610,18 @@ export default function Module2() {
               <li>Requires synchronization to avoid race conditions.</li>
             </ul>
             <div className="my-4">
-              <Image 
-                src="/placeholder.svg?height=250&width=600&query=shared memory communication between processes" 
-                alt="Shared Memory Communication" 
-                width={600} 
-                height={250} 
+              <Image
+                src="/placeholder.svg?height=250&width=600&query=shared memory communication between processes"
+                alt="Shared Memory Communication"
+                width={600}
+                height={250}
                 className="rounded-md mx-auto"
               />
             </div>
           </TabsContent>
           <TabsContent value="message-passing" className="p-4 border rounded-md mt-2">
             <h3 className="text-lg font-medium mb-2">Message Passing</h3>
-            <p className="mb-2">
-              In message passing systems, processes communicate by exchanging messages:
-            </p>
+            <p className="mb-2">In message passing systems, processes communicate by exchanging messages:</p>
             <ul className="list-disc pl-5 mt-2">
               <li>Processes communicate by sending and receiving messages.</li>
               <li>Communication can be direct or indirect (through mailboxes or ports).</li>
@@ -554,45 +629,52 @@ export default function Module2() {
               <li>Easier to implement than shared memory for distributed systems.</li>
             </ul>
             <div className="my-4">
-              <Image 
-                src="/placeholder.svg?height=250&width=600&query=message passing between processes" 
-                alt="Message Passing" 
-                width={600} 
-                height={250} 
+              <Image
+                src="/placeholder.svg?height=250&width=600&query=message passing between processes"
+                alt="Message Passing"
+                width={600}
+                height={250}
                 className="rounded-md mx-auto"
               />
             </div>
           </TabsContent>
           <TabsContent value="pipes" className="p-4 border rounded-md mt-2">
             <h3 className="text-lg font-medium mb-2">Pipes & Sockets</h3>
-            <p className="mb-2">
-              Other IPC mechanisms include:
-            </p>
+            <p className="mb-2">Other IPC mechanisms include:</p>
             <ul className="list-disc pl-5 mt-2">
-              <li><strong>Pipes:</strong> A unidirectional communication channel between related processes.</li>
-              <li><strong>Named Pipes (FIFOs):</strong> Allow communication between unrelated processes.</li>
-              <li><strong>Sockets:</strong> Enable communication between processes on different machines.</li>
-              <li><strong>Remote Procedure Calls (RPC):</strong> Allow a program to cause a procedure to execute in another address space.</li>
+              <li>
+                <strong>Pipes:</strong> A unidirectional communication channel between related processes.
+              </li>
+              <li>
+                <strong>Named Pipes (FIFOs):</strong> Allow communication between unrelated processes.
+              </li>
+              <li>
+                <strong>Sockets:</strong> Enable communication between processes on different machines.
+              </li>
+              <li>
+                <strong>Remote Procedure Calls (RPC):</strong> Allow a program to cause a procedure to execute in
+                another address space.
+              </li>
             </ul>
             <div className="bg-muted p-4 rounded-md mt-4">
-              <p className="font-mono text-sm">
-                // Example of pipe in Unix/Linux<br />
-                const fd = new Array(2);<br />
-                pipe(fd); // Create a pipe<br /><br />
+              <pre className="font-mono text-sm whitespace-pre-wrap">
+                {`// Example of pipe in Unix/Linux
+const fd = new Array(2);
+pipe(fd); // Create a pipe
 
-                if (fork() == 0) {<br />
-                &nbsp;&nbsp;// Child process<br />
-                &nbsp;&nbsp;close(fd[0]); // Close reading end<br />
-                &nbsp;&nbsp;write(fd[1], "Hello", 5);<br />
-                &nbsp;&nbsp;close(fd[1]);<br />
-                } else {<br />
-                &nbsp;&nbsp;// Parent process<br />
-                &nbsp;&nbsp;close(fd[1]); // Close writing end<br />
-                &nbsp;&nbsp;const buffer = new Array(20);<br />
-                &nbsp;&nbsp;read(fd[0], buffer, sizeof(buffer));<br />
-                &nbsp;&nbsp;close(fd[0]);<br />
-                }
-              </p>
+if (fork() == 0) {
+  // Child process
+  close(fd[0]); // Close reading end
+  write(fd[1], "Hello", 5);
+  close(fd[1]);
+} else {
+  // Parent process
+  close(fd[1]); // Close writing end
+  const buffer = new Array(20);
+  read(fd[0], buffer, sizeof(buffer));
+  close(fd[0]);
+}`}
+              </pre>
             </div>
           </TabsContent>
         </Tabs>
@@ -606,11 +688,11 @@ export default function Module2() {
         </p>
 
         <div className="my-6">
-          <Image 
-            src="/placeholder.svg?height=300&width=800&query=single-threaded vs multi-threaded process" 
-            alt="Single-threaded vs Multi-threaded Process" 
-            width={800} 
-            height={300} 
+          <Image
+            src="/placeholder.svg?height=300&width=800&query=single-threaded vs multi-threaded process"
+            alt="Single-threaded vs Multi-threaded Process"
+            width={800}
+            height={300}
             className="rounded-md"
           />
           <p className="text-sm text-center text-muted-foreground mt-2">
@@ -618,14 +700,21 @@ export default function Module2() {
           </p>
         </div>
 
-        <p className="mt-4">
-          Threads offer several benefits:
-        </p>
+        <p className="mt-4">Threads offer several benefits:</p>
         <ul className="list-disc pl-5 mt-2">
-          <li><strong>Responsiveness:</strong> Applications can remain responsive to user input while performing other tasks.</li>
-          <li><strong>Resource Sharing:</strong> Threads share the memory and resources of the process they belong to.</li>
-          <li><strong>Economy:</strong> Creating and context-switching threads is faster than for processes.</li>
-          <li><strong>Scalability:</strong> Applications can take advantage of multiprocessor architectures.</li>
+          <li>
+            <strong>Responsiveness:</strong> Applications can remain responsive to user input while performing other
+            tasks.
+          </li>
+          <li>
+            <strong>Resource Sharing:</strong> Threads share the memory and resources of the process they belong to.
+          </li>
+          <li>
+            <strong>Economy:</strong> Creating and context-switching threads is faster than for processes.
+          </li>
+          <li>
+            <strong>Scalability:</strong> Applications can take advantage of multiprocessor architectures.
+          </li>
         </ul>
 
         <Tabs defaultValue="user-level" className="my-6">
@@ -645,15 +734,11 @@ export default function Module2() {
               <li>If one thread blocks on I/O, all threads in the process are blocked.</li>
               <li>Cannot take advantage of multiprocessing.</li>
             </ul>
-            <p className="mt-4">
-              Examples include POSIX Threads (Pthreads), Java threads, and Win32 threads.
-            </p>
+            <p className="mt-4">Examples include POSIX Threads (Pthreads), Java threads, and Win32 threads.</p>
           </TabsContent>
           <TabsContent value="kernel-level" className="p-4 border rounded-md mt-2">
             <h3 className="text-lg font-medium mb-2">Kernel-Level Threads</h3>
-            <p className="mb-2">
-              Kernel-level threads are supported and managed directly by the operating system:
-            </p>
+            <p className="mb-2">Kernel-level threads are supported and managed directly by the operating system:</p>
             <ul className="list-disc pl-5 mt-2">
               <li>Thread management is done by the kernel.</li>
               <li>The kernel maintains context information for the process and its threads.</li>
@@ -667,39 +752,63 @@ export default function Module2() {
           </TabsContent>
         </Tabs>
 
-        <p className="mt-4">
-          Thread models describe the relationship between user-level and kernel-level threads:
-        </p>
+        <p className="mt-4">Thread models describe the relationship between user-level and kernel-level threads:</p>
         <ul className="list-disc pl-5 mt-2">
-          <li><strong>Many-to-One:</strong> Many user-level threads mapped to a single kernel thread.</li>
-          <li><strong>One-to-One:</strong> Each user-level thread mapped to a kernel thread.</li>
-          <li><strong>Many-to-Many:</strong> Many user-level threads mapped to a smaller or equal number of kernel threads.</li>
+          <li>
+            <strong>Many-to-One:</strong> Many user-level threads mapped to a single kernel thread.
+          </li>
+          <li>
+            <strong>One-to-One:</strong> Each user-level thread mapped to a kernel thread.
+          </li>
+          <li>
+            <strong>Many-to-Many:</strong> Many user-level threads mapped to a smaller or equal number of kernel
+            threads.
+          </li>
         </ul>
       </section>
 
       <section id="security" className="mt-8">
         <h2>Security Issues</h2>
-        <p>
-          Process management involves several security considerations to protect the system and user data:
-        </p>
+        <p>Process management involves several security considerations to protect the system and user data:</p>
 
         <ul className="list-disc pl-5 mt-2">
-          <li><strong>Process Isolation:</strong> Ensuring that processes cannot interfere with each other's memory space.</li>
-          <li><strong>Access Control:</strong> Limiting what resources a process can access based on permissions.</li>
-          <li><strong>Authentication:</strong> Verifying the identity of users before allowing processes to run.</li>
-          <li><strong>Authorization:</strong> Determining what actions a process is allowed to perform.</li>
-          <li><strong>Secure IPC:</strong> Protecting data exchanged between processes.</li>
-          <li><strong>Prevention of Privilege Escalation:</strong> Ensuring processes cannot gain unauthorized privileges.</li>
+          <li>
+            <strong>Process Isolation:</strong> Ensuring that processes cannot interfere with each other's memory space.
+          </li>
+          <li>
+            <strong>Access Control:</strong> Limiting what resources a process can access based on permissions.
+          </li>
+          <li>
+            <strong>Authentication:</strong> Verifying the identity of users before allowing processes to run.
+          </li>
+          <li>
+            <strong>Authorization:</strong> Determining what actions a process is allowed to perform.
+          </li>
+          <li>
+            <strong>Secure IPC:</strong> Protecting data exchanged between processes.
+          </li>
+          <li>
+            <strong>Prevention of Privilege Escalation:</strong> Ensuring processes cannot gain unauthorized privileges.
+          </li>
         </ul>
 
-        <p className="mt-4">
-          Common security threats related to process management include:
-        </p>
+        <p className="mt-4">Common security threats related to process management include:</p>
         <ul className="list-disc pl-5 mt-2">
-          <li><strong>Buffer Overflow:</strong> When a process writes data beyond the allocated buffer, potentially overwriting adjacent memory.</li>
-          <li><strong>Race Conditions:</strong> When the system behavior depends on the sequence or timing of uncontrollable events.</li>
-          <li><strong>Denial of Service:</strong> When a process consumes excessive resources, preventing other processes from functioning.</li>
-          <li><strong>Covert Channels:</strong> Hidden communication channels that can be used to leak information.</li>
+          <li>
+            <strong>Buffer Overflow:</strong> When a process writes data beyond the allocated buffer, potentially
+            overwriting adjacent memory.
+          </li>
+          <li>
+            <strong>Race Conditions:</strong> When the system behavior depends on the sequence or timing of
+            uncontrollable events.
+          </li>
+          <li>
+            <strong>Denial of Service:</strong> When a process consumes excessive resources, preventing other processes
+            from functioning.
+          </li>
+          <li>
+            <strong>Covert Channels:</strong> Hidden communication channels that can be used to leak information.
+          </li>
         </ul>
       </section>
 
