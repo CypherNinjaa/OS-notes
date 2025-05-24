@@ -55,6 +55,14 @@ export default function Navbar() {
             >
               <Brain className="mr-1 h-4 w-4" /> AI Assistant
             </Link>
+            <Link
+              href="/all-demos"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                pathname === "/all-demos" ? "text-primary" : "text-muted-foreground"
+              }`}
+            >
+              All Demos
+            </Link>
           </nav>
 
           <div className="flex items-center space-x-2">
@@ -107,6 +115,15 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Brain className="mr-1 h-4 w-4" /> AI Assistant
+              </Link>
+              <Link
+                href="/all-demos"
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  pathname === "/all-demos" ? "text-primary" : "text-muted-foreground"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                All Demos
               </Link>
             </nav>
           </div>
