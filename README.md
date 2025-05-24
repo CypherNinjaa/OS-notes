@@ -14,7 +14,7 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/vikashs-projects-b0e8ebf0/v0-help-with-study](https://vercel.com/vikashs-projects-b0e8ebf0/v0-help-with-study)**
+**[https://os-notes.vercel.app/)**
 
 ## Build your app
 
